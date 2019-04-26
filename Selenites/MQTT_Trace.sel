@@ -7,7 +7,8 @@ if not arg then
 end
 
 -- Connection, subscription and finally waiting for messages
-Brk, err = SelMQTT.Connect( "tcp://localhost:1883", { reliable=false, clientID='MQTTTrace_'..Selene.getHostname().."_"..Selene.getPid()  } )
+Brk, err = SelMQTT.Connect( "tcp://torchwood.local:1883", { reliable=false, clientID='MQTTTrace_'..Selene.getHostname().."_"..Selene.getPid()  } )
+-- Brk, err = SelMQTT.Connect( "tcp://bpi.chez.moi:1883", { reliable=false, clientID='MQTTTrace_'..Selene.getHostname().."_"..Selene.getPid()  } )
 if not Brk then
 	print( err )
 	return
